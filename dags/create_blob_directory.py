@@ -7,7 +7,7 @@ from datetime import datetime
 
 # Accessing the environment variable
 AZURE_ACCOUNT_NAME = "airflowlab2024san"
-AZURE_ACCESS_KEY = "SXbSs3eg3y213sn9+L4VqxdFhlc2R2A+AEmr1WblQ3xi2+DwTH1pbMUassBNg6Ug8kgik4bkyGsU+AStNPxyqQ==" 
+AZURE_ACCESS_KEY = "Your_acces_key" 
 
 # Building connection string using the access key
 AZURE_CONN_STRING = f"DefaultEndpointsProtocol=https;AccountName={AZURE_ACCOUNT_NAME};AccountKey={AZURE_ACCESS_KEY};EndpointSuffix=core.windows.net"
