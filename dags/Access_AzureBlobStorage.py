@@ -5,7 +5,7 @@ from datetime import datetime
 
 # Define constants
 AZURE_ACCOUNT_NAME = "airflowlab2024san"
-AZURE_ACCESS_KEY = "SXbSs3eg3y213sn9+L4VqxdFhlc2R2A+AEmr1WblQ3xi2+DwTH1pbMUassBNg6Ug8kgik4bkyGsU+AStNPxyqQ==" 
+AZURE_ACCESS_KEY = "Your_acces_key" 
 CONTAINER_NAME = "bd656-container"
 BLOB_DIRECTORY = "komsan"
 
