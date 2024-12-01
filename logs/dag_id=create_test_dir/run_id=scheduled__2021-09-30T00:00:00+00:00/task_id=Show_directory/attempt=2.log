@@ -1,0 +1,27 @@
+[2024-11-24T05:09:12.164+0000] {taskinstance.py:1979} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: create_test_dir.Show_directory scheduled__2021-09-30T00:00:00+00:00 [queued]>
+[2024-11-24T05:09:12.204+0000] {taskinstance.py:1979} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: create_test_dir.Show_directory scheduled__2021-09-30T00:00:00+00:00 [queued]>
+[2024-11-24T05:09:12.216+0000] {taskinstance.py:2193} INFO - Starting attempt 2 of 2
+[2024-11-24T05:09:12.298+0000] {taskinstance.py:2217} INFO - Executing <Task(BashOperator): Show_directory> on 2021-09-30 00:00:00+00:00
+[2024-11-24T05:09:12.312+0000] {standard_task_runner.py:60} INFO - Started process 1008 to run task
+[2024-11-24T05:09:12.329+0000] {standard_task_runner.py:87} INFO - Running: ['***', 'tasks', 'run', 'create_test_dir', 'Show_directory', 'scheduled__2021-09-30T00:00:00+00:00', '--job-id', '5862', '--raw', '--subdir', 'DAGS_FOLDER/directory.py', '--cfg-path', '/tmp/tmp6cd8tu6y']
+[2024-11-24T05:09:12.338+0000] {standard_task_runner.py:88} INFO - Job 5862: Subtask Show_directory
+[2024-11-24T05:09:12.523+0000] {task_command.py:423} INFO - Running <TaskInstance: create_test_dir.Show_directory scheduled__2021-09-30T00:00:00+00:00 [running]> on host 70a89d0d486b
+[2024-11-24T05:09:12.989+0000] {taskinstance.py:2513} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='***' AIRFLOW_CTX_DAG_ID='create_test_dir' AIRFLOW_CTX_TASK_ID='Show_directory' AIRFLOW_CTX_EXECUTION_DATE='2021-09-30T00:00:00+00:00' AIRFLOW_CTX_TRY_NUMBER='2' AIRFLOW_CTX_DAG_RUN_ID='scheduled__2021-09-30T00:00:00+00:00'
+[2024-11-24T05:09:12.991+0000] {subprocess.py:63} INFO - Tmp dir root location: /tmp
+[2024-11-24T05:09:12.998+0000] {subprocess.py:75} INFO - Running command: ['/usr/bin/bash', '-c', 'ls test_dir ']
+[2024-11-24T05:09:13.087+0000] {subprocess.py:86} INFO - Output:
+[2024-11-24T05:09:13.113+0000] {subprocess.py:93} INFO - ls: cannot access 'test_dir': No such file or directory
+[2024-11-24T05:09:13.118+0000] {subprocess.py:97} INFO - Command exited with return code 2
+[2024-11-24T05:09:13.183+0000] {taskinstance.py:2731} ERROR - Task failed with exception
+Traceback (most recent call last):
+  File "/home/airflow/.local/lib/python3.8/site-packages/airflow/models/taskinstance.py", line 444, in _execute_task
+    result = _execute_callable(context=context, **execute_callable_kwargs)
+  File "/home/airflow/.local/lib/python3.8/site-packages/airflow/models/taskinstance.py", line 414, in _execute_callable
+    return execute_callable(context=context, **execute_callable_kwargs)
+  File "/home/airflow/.local/lib/python3.8/site-packages/airflow/operators/bash.py", line 212, in execute
+    raise AirflowException(
+airflow.exceptions.AirflowException: Bash command failed. The command returned a non-zero exit code 2.
+[2024-11-24T05:09:13.209+0000] {taskinstance.py:1149} INFO - Marking task as FAILED. dag_id=create_test_dir, task_id=Show_directory, execution_date=20210930T000000, start_date=20241124T050912, end_date=20241124T050913
+[2024-11-24T05:09:13.279+0000] {standard_task_runner.py:107} ERROR - Failed to execute job 5862 for task Show_directory (Bash command failed. The command returned a non-zero exit code 2.; 1008)
+[2024-11-24T05:09:13.344+0000] {local_task_job_runner.py:234} INFO - Task exited with return code 1
+[2024-11-24T05:09:13.399+0000] {taskinstance.py:3312} INFO - 0 downstream tasks scheduled from follow-on schedule check

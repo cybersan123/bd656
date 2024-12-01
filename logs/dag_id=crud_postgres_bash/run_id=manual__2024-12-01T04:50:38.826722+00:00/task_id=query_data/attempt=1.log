@@ -1,0 +1,21 @@
+[2024-12-01T04:50:39.448+0000] {taskinstance.py:1979} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: crud_postgres_bash.query_data manual__2024-12-01T04:50:38.826722+00:00 [queued]>
+[2024-12-01T04:50:39.453+0000] {taskinstance.py:1979} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: crud_postgres_bash.query_data manual__2024-12-01T04:50:38.826722+00:00 [queued]>
+[2024-12-01T04:50:39.453+0000] {taskinstance.py:2193} INFO - Starting attempt 1 of 2
+[2024-12-01T04:50:39.462+0000] {taskinstance.py:2217} INFO - Executing <Task(BashOperator): query_data> on 2024-12-01 04:50:38.826722+00:00
+[2024-12-01T04:50:39.464+0000] {standard_task_runner.py:60} INFO - Started process 3890 to run task
+[2024-12-01T04:50:39.467+0000] {standard_task_runner.py:87} INFO - Running: ['***', 'tasks', 'run', 'crud_postgres_bash', 'query_data', 'manual__2024-12-01T04:50:38.826722+00:00', '--job-id', '6692', '--raw', '--subdir', 'DAGS_FOLDER/crud_postgres_bash.py', '--cfg-path', '/tmp/tmp2k5uq90u']
+[2024-12-01T04:50:39.469+0000] {standard_task_runner.py:88} INFO - Job 6692: Subtask query_data
+[2024-12-01T04:50:39.501+0000] {task_command.py:423} INFO - Running <TaskInstance: crud_postgres_bash.query_data manual__2024-12-01T04:50:38.826722+00:00 [running]> on host 4f673f93eb11
+[2024-12-01T04:50:39.538+0000] {taskinstance.py:2513} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='***' AIRFLOW_CTX_DAG_ID='crud_postgres_bash' AIRFLOW_CTX_TASK_ID='query_data' AIRFLOW_CTX_EXECUTION_DATE='2024-12-01T04:50:38.826722+00:00' AIRFLOW_CTX_TRY_NUMBER='1' AIRFLOW_CTX_DAG_RUN_ID='manual__2024-12-01T04:50:38.826722+00:00'
+[2024-12-01T04:50:39.539+0000] {subprocess.py:63} INFO - Tmp dir root location: /tmp
+[2024-12-01T04:50:39.540+0000] {subprocess.py:75} INFO - Running command: ['/usr/bin/bash', '-c', 'PGPASSWORD=*** psql --host=psql-training1.postgres.database.azure.com --port=5432 --username=training --dbname=postgres --file=/opt/***/dags/sql/query_data.sql']
+[2024-12-01T04:50:39.545+0000] {subprocess.py:86} INFO - Output:
+[2024-12-01T04:50:40.053+0000] {subprocess.py:93} INFO -  id | year | weeknum | new_case | total_case | new_case_excludeabroad | total_case_excludeabroad | new_recovered | total_recovered | new_death | total_death | case_foreign | case_prison | case_walkin | case_new_prev | case_new_diff | death_new_prev | death_new_diff |        update_date
+[2024-12-01T04:50:40.054+0000] {subprocess.py:93} INFO - ----+------+---------+----------+------------+------------------------+--------------------------+---------------+-----------------+-----------+-------------+--------------+-------------+-------------+---------------+---------------+----------------+----------------+----------------------------
+[2024-12-01T04:50:40.054+0000] {subprocess.py:93} INFO -   1 | 2024 |      44 |      569 |      41711 |                    569 |                    41711 |             0 |               0 |         0 |         214 |            0 |           0 |         569 |             0 |           569 |              0 |              0 | 2024-12-01 04:39:23.487865
+[2024-12-01T04:50:40.055+0000] {subprocess.py:93} INFO - (1 row)
+[2024-12-01T04:50:40.055+0000] {subprocess.py:93} INFO - 
+[2024-12-01T04:50:40.056+0000] {subprocess.py:97} INFO - Command exited with return code 0
+[2024-12-01T04:50:40.078+0000] {taskinstance.py:1149} INFO - Marking task as SUCCESS. dag_id=crud_postgres_bash, task_id=query_data, execution_date=20241201T045038, start_date=20241201T045039, end_date=20241201T045040
+[2024-12-01T04:50:40.105+0000] {local_task_job_runner.py:234} INFO - Task exited with return code 0
+[2024-12-01T04:50:40.117+0000] {taskinstance.py:3312} INFO - 0 downstream tasks scheduled from follow-on schedule check

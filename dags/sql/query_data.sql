@@ -1,0 +1,1 @@
+SELECT * FROM komsan.weekly_covid19_reports LIMIT 10;

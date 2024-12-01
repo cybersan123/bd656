@@ -1,0 +1,17 @@
+[2024-11-24T04:09:12.681+0000] {taskinstance.py:1979} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: Helloworld.task_4 scheduled__2016-12-23T00:00:00+00:00 [queued]>
+[2024-11-24T04:09:12.691+0000] {taskinstance.py:1979} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: Helloworld.task_4 scheduled__2016-12-23T00:00:00+00:00 [queued]>
+[2024-11-24T04:09:12.699+0000] {taskinstance.py:2193} INFO - Starting attempt 1 of 2
+[2024-11-24T04:09:12.785+0000] {taskinstance.py:2217} INFO - Executing <Task(BashOperator): task_4> on 2016-12-23 00:00:00+00:00
+[2024-11-24T04:09:12.801+0000] {standard_task_runner.py:60} INFO - Started process 3586 to run task
+[2024-11-24T04:09:12.807+0000] {standard_task_runner.py:87} INFO - Running: ['***', 'tasks', 'run', 'Helloworld', 'task_4', 'scheduled__2016-12-23T00:00:00+00:00', '--job-id', '1037', '--raw', '--subdir', 'DAGS_FOLDER/Helloworld.py', '--cfg-path', '/tmp/tmp3doy2k8f']
+[2024-11-24T04:09:12.813+0000] {standard_task_runner.py:88} INFO - Job 1037: Subtask task_4
+[2024-11-24T04:09:12.896+0000] {task_command.py:423} INFO - Running <TaskInstance: Helloworld.task_4 scheduled__2016-12-23T00:00:00+00:00 [running]> on host 08b9826fa440
+[2024-11-24T04:09:13.074+0000] {taskinstance.py:2513} INFO - Exporting env vars: AIRFLOW_CTX_DAG_EMAIL='***@***.com' AIRFLOW_CTX_DAG_OWNER='***' AIRFLOW_CTX_DAG_ID='Helloworld' AIRFLOW_CTX_TASK_ID='task_4' AIRFLOW_CTX_EXECUTION_DATE='2016-12-23T00:00:00+00:00' AIRFLOW_CTX_TRY_NUMBER='1' AIRFLOW_CTX_DAG_RUN_ID='scheduled__2016-12-23T00:00:00+00:00'
+[2024-11-24T04:09:13.076+0000] {subprocess.py:63} INFO - Tmp dir root location: /tmp
+[2024-11-24T04:09:13.081+0000] {subprocess.py:75} INFO - Running command: ['/usr/bin/bash', '-c', 'echo "Hello World from Task 4"']
+[2024-11-24T04:09:13.095+0000] {subprocess.py:86} INFO - Output:
+[2024-11-24T04:09:13.097+0000] {subprocess.py:93} INFO - Hello World from Task 4
+[2024-11-24T04:09:13.100+0000] {subprocess.py:97} INFO - Command exited with return code 0
+[2024-11-24T04:09:13.144+0000] {taskinstance.py:1149} INFO - Marking task as SUCCESS. dag_id=Helloworld, task_id=task_4, execution_date=20161223T000000, start_date=20241124T040912, end_date=20241124T040913
+[2024-11-24T04:09:13.183+0000] {local_task_job_runner.py:234} INFO - Task exited with return code 0
+[2024-11-24T04:09:13.209+0000] {taskinstance.py:3312} INFO - 0 downstream tasks scheduled from follow-on schedule check

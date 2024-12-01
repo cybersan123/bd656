@@ -1,0 +1,44 @@
+[2024-12-01T04:01:18.726+0000] {taskinstance.py:1979} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: azure_blob_ingestion_with_upload.download_blob manual__2024-12-01T04:01:14.293750+00:00 [queued]>
+[2024-12-01T04:01:18.730+0000] {taskinstance.py:1979} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: azure_blob_ingestion_with_upload.download_blob manual__2024-12-01T04:01:14.293750+00:00 [queued]>
+[2024-12-01T04:01:18.730+0000] {taskinstance.py:2193} INFO - Starting attempt 1 of 1
+[2024-12-01T04:01:18.735+0000] {taskinstance.py:2217} INFO - Executing <Task(PythonOperator): download_blob> on 2024-12-01 04:01:14.293750+00:00
+[2024-12-01T04:01:18.737+0000] {standard_task_runner.py:60} INFO - Started process 3115 to run task
+[2024-12-01T04:01:18.739+0000] {standard_task_runner.py:87} INFO - Running: ['***', 'tasks', 'run', 'azure_blob_ingestion_with_upload', 'download_blob', 'manual__2024-12-01T04:01:14.293750+00:00', '--job-id', '6684', '--raw', '--subdir', 'DAGS_FOLDER/Access_AzureBlobStorage.py', '--cfg-path', '/tmp/tmpn7la_46o']
+[2024-12-01T04:01:18.740+0000] {standard_task_runner.py:88} INFO - Job 6684: Subtask download_blob
+[2024-12-01T04:01:18.763+0000] {task_command.py:423} INFO - Running <TaskInstance: azure_blob_ingestion_with_upload.download_blob manual__2024-12-01T04:01:14.293750+00:00 [running]> on host 4f673f93eb11
+[2024-12-01T04:01:18.800+0000] {taskinstance.py:2513} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='***' AIRFLOW_CTX_DAG_ID='azure_blob_ingestion_with_upload' AIRFLOW_CTX_TASK_ID='download_blob' AIRFLOW_CTX_EXECUTION_DATE='2024-12-01T04:01:14.293750+00:00' AIRFLOW_CTX_TRY_NUMBER='1' AIRFLOW_CTX_DAG_RUN_ID='manual__2024-12-01T04:01:14.293750+00:00'
+[2024-12-01T04:01:18.803+0000] {_universal.py:514} INFO - Request URL: 'https://***lab2024san.blob.core.windows.net/bd656-container/komsan/test_local.txt'
+Request method: 'GET'
+Request headers:
+    'x-ms-range': 'REDACTED'
+    'x-ms-version': 'REDACTED'
+    'Accept': 'application/xml'
+    'User-Agent': 'azsdk-python-storage-blob/12.19.1 Python/3.8.18 (Linux-6.10.14-linuxkit-aarch64-with-glibc2.34)'
+    'x-ms-date': 'REDACTED'
+    'x-ms-client-request-id': 'eb38cb36-af98-11ef-a50c-0242ac120006'
+    'Authorization': 'REDACTED'
+No body was attached to the request
+[2024-12-01T04:01:19.908+0000] {_universal.py:550} INFO - Response status: 206
+Response headers:
+    'Content-Length': '20'
+    'Content-Type': 'application/octet-stream'
+    'Content-Range': 'REDACTED'
+    'Last-Modified': 'Sun, 01 Dec 2024 04:01:17 GMT'
+    'Accept-Ranges': 'REDACTED'
+    'ETag': '"0x8DD11BCCEB744D2"'
+    'Server': 'Windows-Azure-Blob/1.0 Microsoft-HTTPAPI/2.0'
+    'x-ms-request-id': 'ee362021-b01e-001a-6ba5-437df8000000'
+    'x-ms-client-request-id': 'eb38cb36-af98-11ef-a50c-0242ac120006'
+    'x-ms-version': 'REDACTED'
+    'x-ms-creation-time': 'REDACTED'
+    'x-ms-blob-content-md5': 'REDACTED'
+    'x-ms-lease-status': 'REDACTED'
+    'x-ms-lease-state': 'REDACTED'
+    'x-ms-blob-type': 'REDACTED'
+    'x-ms-server-encrypted': 'REDACTED'
+    'Date': 'Sun, 01 Dec 2024 04:01:19 GMT'
+[2024-12-01T04:01:19.914+0000] {logging_mixin.py:188} INFO - Downloaded komsan/test_local.txt to /opt/***/dags/output/test_blob.txt
+[2024-12-01T04:01:19.914+0000] {python.py:202} INFO - Done. Returned value was: None
+[2024-12-01T04:01:19.927+0000] {taskinstance.py:1149} INFO - Marking task as SUCCESS. dag_id=azure_blob_ingestion_with_upload, task_id=download_blob, execution_date=20241201T040114, start_date=20241201T040118, end_date=20241201T040119
+[2024-12-01T04:01:19.946+0000] {local_task_job_runner.py:234} INFO - Task exited with return code 0
+[2024-12-01T04:01:19.961+0000] {taskinstance.py:3312} INFO - 0 downstream tasks scheduled from follow-on schedule check

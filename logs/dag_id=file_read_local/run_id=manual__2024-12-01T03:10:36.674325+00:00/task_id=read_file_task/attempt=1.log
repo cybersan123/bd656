@@ -1,0 +1,26 @@
+[2024-12-01T03:10:38.618+0000] {taskinstance.py:1979} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: file_read_local.read_file_task manual__2024-12-01T03:10:36.674325+00:00 [queued]>
+[2024-12-01T03:10:38.628+0000] {taskinstance.py:1979} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: file_read_local.read_file_task manual__2024-12-01T03:10:36.674325+00:00 [queued]>
+[2024-12-01T03:10:38.628+0000] {taskinstance.py:2193} INFO - Starting attempt 1 of 2
+[2024-12-01T03:10:38.637+0000] {taskinstance.py:2217} INFO - Executing <Task(PythonOperator): read_file_task> on 2024-12-01 03:10:36.674325+00:00
+[2024-12-01T03:10:38.641+0000] {standard_task_runner.py:60} INFO - Started process 2319 to run task
+[2024-12-01T03:10:38.645+0000] {standard_task_runner.py:87} INFO - Running: ['***', 'tasks', 'run', 'file_read_local', 'read_file_task', 'manual__2024-12-01T03:10:36.674325+00:00', '--job-id', '6676', '--raw', '--subdir', 'DAGS_FOLDER/file_read_local.py', '--cfg-path', '/tmp/tmpyr8tr7j9']
+[2024-12-01T03:10:38.646+0000] {standard_task_runner.py:88} INFO - Job 6676: Subtask read_file_task
+[2024-12-01T03:10:38.686+0000] {task_command.py:423} INFO - Running <TaskInstance: file_read_local.read_file_task manual__2024-12-01T03:10:36.674325+00:00 [running]> on host 4f673f93eb11
+[2024-12-01T03:10:38.729+0000] {taskinstance.py:2513} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='***' AIRFLOW_CTX_DAG_ID='file_read_local' AIRFLOW_CTX_TASK_ID='read_file_task' AIRFLOW_CTX_EXECUTION_DATE='2024-12-01T03:10:36.674325+00:00' AIRFLOW_CTX_TRY_NUMBER='1' AIRFLOW_CTX_DAG_RUN_ID='manual__2024-12-01T03:10:36.674325+00:00'
+[2024-12-01T03:10:38.730+0000] {logging_mixin.py:188} INFO - File content:
+id,name,age,city
+1,Alice,24,New York
+2,Bob,27,Los Angeles
+3,Charlie,22,Chicago
+4,David,32,Houston
+5,Eve,29,Phoenix
+[2024-12-01T03:10:38.730+0000] {python.py:202} INFO - Done. Returned value was: id,name,age,city
+1,Alice,24,New York
+2,Bob,27,Los Angeles
+3,Charlie,22,Chicago
+4,David,32,Houston
+5,Eve,29,Phoenix
+
+[2024-12-01T03:10:38.740+0000] {taskinstance.py:1149} INFO - Marking task as SUCCESS. dag_id=file_read_local, task_id=read_file_task, execution_date=20241201T031036, start_date=20241201T031038, end_date=20241201T031038
+[2024-12-01T03:10:38.786+0000] {local_task_job_runner.py:234} INFO - Task exited with return code 0
+[2024-12-01T03:10:38.800+0000] {taskinstance.py:3312} INFO - 0 downstream tasks scheduled from follow-on schedule check

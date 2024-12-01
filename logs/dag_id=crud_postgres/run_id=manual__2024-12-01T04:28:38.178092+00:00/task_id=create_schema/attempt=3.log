@@ -1,0 +1,36 @@
+[2024-12-01T04:37:00.284+0000] {taskinstance.py:1979} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: crud_postgres.create_schema manual__2024-12-01T04:28:38.178092+00:00 [queued]>
+[2024-12-01T04:37:00.288+0000] {taskinstance.py:1979} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: crud_postgres.create_schema manual__2024-12-01T04:28:38.178092+00:00 [queued]>
+[2024-12-01T04:37:00.288+0000] {taskinstance.py:2193} INFO - Starting attempt 3 of 4
+[2024-12-01T04:37:00.294+0000] {taskinstance.py:2217} INFO - Executing <Task(PostgresOperator): create_schema> on 2024-12-01 04:28:38.178092+00:00
+[2024-12-01T04:37:00.296+0000] {standard_task_runner.py:60} INFO - Started process 3664 to run task
+[2024-12-01T04:37:00.298+0000] {standard_task_runner.py:87} INFO - Running: ['***', 'tasks', 'run', 'crud_postgres', 'create_schema', 'manual__2024-12-01T04:28:38.178092+00:00', '--job-id', '6687', '--raw', '--subdir', 'DAGS_FOLDER/CRUD_Postgres.py', '--cfg-path', '/tmp/tmpoi8qzbl2']
+[2024-12-01T04:37:00.299+0000] {standard_task_runner.py:88} INFO - Job 6687: Subtask create_schema
+[2024-12-01T04:37:00.327+0000] {task_command.py:423} INFO - Running <TaskInstance: crud_postgres.create_schema manual__2024-12-01T04:28:38.178092+00:00 [running]> on host 4f673f93eb11
+[2024-12-01T04:37:00.364+0000] {taskinstance.py:2513} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='***' AIRFLOW_CTX_DAG_ID='crud_postgres' AIRFLOW_CTX_TASK_ID='create_schema' AIRFLOW_CTX_EXECUTION_DATE='2024-12-01T04:28:38.178092+00:00' AIRFLOW_CTX_TRY_NUMBER='3' AIRFLOW_CTX_DAG_RUN_ID='manual__2024-12-01T04:28:38.178092+00:00'
+[2024-12-01T04:37:00.365+0000] {sql.py:276} INFO - Executing: CREATE SCHEMA IF NOT EXISTS komsan;
+[2024-12-01T04:37:00.370+0000] {base.py:83} INFO - Using connection ID 'azure_postgres_conn' for task execution.
+[2024-12-01T04:37:00.376+0000] {base.py:83} INFO - Using connection ID 'azure_postgres_conn' for task execution.
+[2024-12-01T04:37:01.720+0000] {taskinstance.py:2731} ERROR - Task failed with exception
+Traceback (most recent call last):
+  File "/home/airflow/.local/lib/python3.8/site-packages/airflow/models/taskinstance.py", line 444, in _execute_task
+    result = _execute_callable(context=context, **execute_callable_kwargs)
+  File "/home/airflow/.local/lib/python3.8/site-packages/airflow/models/taskinstance.py", line 414, in _execute_callable
+    return execute_callable(context=context, **execute_callable_kwargs)
+  File "/home/airflow/.local/lib/python3.8/site-packages/airflow/providers/common/sql/operators/sql.py", line 282, in execute
+    output = hook.run(
+  File "/home/airflow/.local/lib/python3.8/site-packages/airflow/providers/common/sql/hooks/sql.py", line 397, in run
+    with closing(self.get_conn()) as conn:
+  File "/home/airflow/.local/lib/python3.8/site-packages/airflow/providers/postgres/hooks/postgres.py", line 161, in get_conn
+    self.conn = psycopg2.connect(**conn_args)
+  File "/home/airflow/.local/lib/python3.8/site-packages/psycopg2/__init__.py", line 122, in connect
+    conn = _connect(dsn, connection_factory=connection_factory, **kwasync)
+psycopg2.OperationalError: connection to server at "psql-training1.postgres.database.azure.com" (52.187.106.39), port 5432 failed: FATAL:  database "Postgres" does not exist
+
+[2024-12-01T04:37:01.736+0000] {taskinstance.py:1149} INFO - Marking task as UP_FOR_RETRY. dag_id=crud_postgres, task_id=create_schema, execution_date=20241201T042838, start_date=20241201T043700, end_date=20241201T043701
+[2024-12-01T04:37:01.750+0000] {standard_task_runner.py:107} ERROR - Failed to execute job 6687 for task create_schema (connection to server at "psql-training1.postgres.database.azure.com" (52.187.106.39), port 5432 failed: FATAL:  database "Postgres" does not exist
+; 3664)
+[2024-12-01T04:37:01.794+0000] {local_task_job_runner.py:234} INFO - Task exited with return code 1
+[2024-12-01T04:37:01.806+0000] {warnings.py:109} WARNING - /home/***/.local/lib/python3.8/site-packages/***/models/baseoperator.py:1201: AirflowProviderDeprecationWarning: Call to deprecated class PostgresOperator. (Please use `***.providers.common.sql.operators.sql.SQLExecuteQueryOperator`.Also, you can provide `hook_params={'schema': <database>}`.)
+  result = cls.__new__(cls)
+
+[2024-12-01T04:37:01.818+0000] {taskinstance.py:3312} INFO - 0 downstream tasks scheduled from follow-on schedule check

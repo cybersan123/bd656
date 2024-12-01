@@ -1,0 +1,34 @@
+[2024-12-01T04:01:14.792+0000] {taskinstance.py:1979} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: azure_blob_ingestion_with_upload.list_blobs manual__2024-12-01T04:01:14.293750+00:00 [queued]>
+[2024-12-01T04:01:14.799+0000] {taskinstance.py:1979} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: azure_blob_ingestion_with_upload.list_blobs manual__2024-12-01T04:01:14.293750+00:00 [queued]>
+[2024-12-01T04:01:14.800+0000] {taskinstance.py:2193} INFO - Starting attempt 1 of 1
+[2024-12-01T04:01:14.807+0000] {taskinstance.py:2217} INFO - Executing <Task(PythonOperator): list_blobs> on 2024-12-01 04:01:14.293750+00:00
+[2024-12-01T04:01:14.810+0000] {standard_task_runner.py:60} INFO - Started process 3111 to run task
+[2024-12-01T04:01:14.812+0000] {standard_task_runner.py:87} INFO - Running: ['***', 'tasks', 'run', 'azure_blob_ingestion_with_upload', 'list_blobs', 'manual__2024-12-01T04:01:14.293750+00:00', '--job-id', '6682', '--raw', '--subdir', 'DAGS_FOLDER/Access_AzureBlobStorage.py', '--cfg-path', '/tmp/tmp6ps6r700']
+[2024-12-01T04:01:14.813+0000] {standard_task_runner.py:88} INFO - Job 6682: Subtask list_blobs
+[2024-12-01T04:01:14.834+0000] {task_command.py:423} INFO - Running <TaskInstance: azure_blob_ingestion_with_upload.list_blobs manual__2024-12-01T04:01:14.293750+00:00 [running]> on host 4f673f93eb11
+[2024-12-01T04:01:14.869+0000] {taskinstance.py:2513} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='***' AIRFLOW_CTX_DAG_ID='azure_blob_ingestion_with_upload' AIRFLOW_CTX_TASK_ID='list_blobs' AIRFLOW_CTX_EXECUTION_DATE='2024-12-01T04:01:14.293750+00:00' AIRFLOW_CTX_TRY_NUMBER='1' AIRFLOW_CTX_DAG_RUN_ID='manual__2024-12-01T04:01:14.293750+00:00'
+[2024-12-01T04:01:14.871+0000] {logging_mixin.py:188} INFO - Blobs in the container:
+[2024-12-01T04:01:14.873+0000] {_universal.py:514} INFO - Request URL: 'https://***lab2024san.blob.core.windows.net/bd656-container?restype=REDACTED&comp=REDACTED'
+Request method: 'GET'
+Request headers:
+    'x-ms-version': 'REDACTED'
+    'Accept': 'application/xml'
+    'User-Agent': 'azsdk-python-storage-blob/12.19.1 Python/3.8.18 (Linux-6.10.14-linuxkit-aarch64-with-glibc2.34)'
+    'x-ms-date': 'REDACTED'
+    'x-ms-client-request-id': 'e8e107cc-af98-11ef-a9b9-0242ac120006'
+    'Authorization': 'REDACTED'
+No body was attached to the request
+[2024-12-01T04:01:15.989+0000] {_universal.py:550} INFO - Response status: 200
+Response headers:
+    'Transfer-Encoding': 'chunked'
+    'Content-Type': 'application/xml'
+    'Server': 'Windows-Azure-Blob/1.0 Microsoft-HTTPAPI/2.0'
+    'x-ms-request-id': '089d85fd-c01e-00f0-0ba5-4382f9000000'
+    'x-ms-client-request-id': 'e8e107cc-af98-11ef-a9b9-0242ac120006'
+    'x-ms-version': 'REDACTED'
+    'Date': 'Sun, 01 Dec 2024 04:01:15 GMT'
+[2024-12-01T04:01:15.993+0000] {logging_mixin.py:188} INFO - komsan/
+[2024-12-01T04:01:15.993+0000] {python.py:202} INFO - Done. Returned value was: None
+[2024-12-01T04:01:16.005+0000] {taskinstance.py:1149} INFO - Marking task as SUCCESS. dag_id=azure_blob_ingestion_with_upload, task_id=list_blobs, execution_date=20241201T040114, start_date=20241201T040114, end_date=20241201T040116
+[2024-12-01T04:01:16.042+0000] {local_task_job_runner.py:234} INFO - Task exited with return code 0
+[2024-12-01T04:01:16.061+0000] {taskinstance.py:3312} INFO - 1 downstream tasks scheduled from follow-on schedule check

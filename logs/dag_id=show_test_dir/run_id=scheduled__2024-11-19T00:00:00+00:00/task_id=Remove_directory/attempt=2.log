@@ -1,0 +1,27 @@
+[2024-11-24T05:38:04.524+0000] {taskinstance.py:1979} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: show_test_dir.Remove_directory scheduled__2024-11-19T00:00:00+00:00 [queued]>
+[2024-11-24T05:38:04.530+0000] {taskinstance.py:1979} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: show_test_dir.Remove_directory scheduled__2024-11-19T00:00:00+00:00 [queued]>
+[2024-11-24T05:38:04.531+0000] {taskinstance.py:2193} INFO - Starting attempt 2 of 2
+[2024-11-24T05:38:04.541+0000] {taskinstance.py:2217} INFO - Executing <Task(BashOperator): Remove_directory> on 2024-11-19 00:00:00+00:00
+[2024-11-24T05:38:04.543+0000] {standard_task_runner.py:60} INFO - Started process 1643 to run task
+[2024-11-24T05:38:04.546+0000] {standard_task_runner.py:87} INFO - Running: ['***', 'tasks', 'run', 'show_test_dir', 'Remove_directory', 'scheduled__2024-11-19T00:00:00+00:00', '--job-id', '5931', '--raw', '--subdir', 'DAGS_FOLDER/Remove_test_dir.py', '--cfg-path', '/tmp/tmpgudjhd9w']
+[2024-11-24T05:38:04.547+0000] {standard_task_runner.py:88} INFO - Job 5931: Subtask Remove_directory
+[2024-11-24T05:38:04.581+0000] {task_command.py:423} INFO - Running <TaskInstance: show_test_dir.Remove_directory scheduled__2024-11-19T00:00:00+00:00 [running]> on host 70a89d0d486b
+[2024-11-24T05:38:04.648+0000] {taskinstance.py:2513} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='***' AIRFLOW_CTX_DAG_ID='show_test_dir' AIRFLOW_CTX_TASK_ID='Remove_directory' AIRFLOW_CTX_EXECUTION_DATE='2024-11-19T00:00:00+00:00' AIRFLOW_CTX_TRY_NUMBER='2' AIRFLOW_CTX_DAG_RUN_ID='scheduled__2024-11-19T00:00:00+00:00'
+[2024-11-24T05:38:04.650+0000] {subprocess.py:63} INFO - Tmp dir root location: /tmp
+[2024-11-24T05:38:04.651+0000] {subprocess.py:75} INFO - Running command: ['/usr/bin/bash', '-c', 'rmdir /opt/***/dags/test_dir']
+[2024-11-24T05:38:04.658+0000] {subprocess.py:86} INFO - Output:
+[2024-11-24T05:38:04.662+0000] {subprocess.py:93} INFO - rmdir: failed to remove '/opt/***/dags/test_dir': No such file or directory
+[2024-11-24T05:38:04.662+0000] {subprocess.py:97} INFO - Command exited with return code 1
+[2024-11-24T05:38:04.678+0000] {taskinstance.py:2731} ERROR - Task failed with exception
+Traceback (most recent call last):
+  File "/home/airflow/.local/lib/python3.8/site-packages/airflow/models/taskinstance.py", line 444, in _execute_task
+    result = _execute_callable(context=context, **execute_callable_kwargs)
+  File "/home/airflow/.local/lib/python3.8/site-packages/airflow/models/taskinstance.py", line 414, in _execute_callable
+    return execute_callable(context=context, **execute_callable_kwargs)
+  File "/home/airflow/.local/lib/python3.8/site-packages/airflow/operators/bash.py", line 212, in execute
+    raise AirflowException(
+airflow.exceptions.AirflowException: Bash command failed. The command returned a non-zero exit code 1.
+[2024-11-24T05:38:04.680+0000] {taskinstance.py:1149} INFO - Marking task as FAILED. dag_id=show_test_dir, task_id=Remove_directory, execution_date=20241119T000000, start_date=20241124T053804, end_date=20241124T053804
+[2024-11-24T05:38:04.691+0000] {standard_task_runner.py:107} ERROR - Failed to execute job 5931 for task Remove_directory (Bash command failed. The command returned a non-zero exit code 1.; 1643)
+[2024-11-24T05:38:04.725+0000] {local_task_job_runner.py:234} INFO - Task exited with return code 1
+[2024-11-24T05:38:04.761+0000] {taskinstance.py:3312} INFO - 0 downstream tasks scheduled from follow-on schedule check
